@@ -3,5 +3,18 @@
 
 :root{
     --fonte-titulo:'Bitcount+Prop+Single+Ink' ;
-    --fonte-texto:
+    --fonte-texto: 'playfair Display' ;
+    --cor-principal: #D9E0EE;
+    --cor-segundaria:#D9E0EE;
+    --cor-destaque:#96CDFB;
+    --cor-texto:#6E738D;
+}
+body{
+    background-color: var(--cor-principal);
+    color: var(--fonte-texto);
+    font-family: var(--fonte-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
