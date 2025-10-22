@@ -12,3 +12,33 @@ let perguntaAtual;
 let historialFinal = "";
 
 botaoInicial.addEventListener('click,iniciarJogo');
+function iniciarJogo(){
+    atual = 0;
+    historialFinal = "";
+    telaInicial.style.display = 'none';
+    caixaPerguntas.classList.remove("mostrar");
+    caixaPerguntas.classList.remove("mostar");
+    caixaResultados.classList.remove("mostrar");
+    mostraPergunta();
+}
+
+function mostraPergunta(){
+    if(atual >=Perguntas.length ){
+        mostraResultados();
+        return;
+    }
+    perguntaAtual = Perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas;textContent = "";
+    mostraAlternativas();
+}
+
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa.texto;
+        botaoAlternativa.addEventListener("click" , () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
+    }
+        
+}
