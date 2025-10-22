@@ -11,4 +11,4 @@ let atual = 0;
 let perguntaAtual;
 let historialFinal = "";
 
-botaoInicial.addEventlistener('click,iniciarJogo');
+botaoInicial.addEventListener('click,iniciarJogo');
