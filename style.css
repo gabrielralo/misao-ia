@@ -4,8 +4,8 @@
 :root{
     --fonte-titulo:'Bitcount+Prop+Single+Ink' ;
     --fonte-texto: 'playfair Display' ;
-    --cor-principal: #f5f7fb;
-    --cor-segundaria:#f7f8fa;
+    --cor-principal: #a0bbf0;
+    --cor-segundaria:#eceff7;
     --cor-destaque:#228efb;
     --cor-texto:#435acc;
 }
