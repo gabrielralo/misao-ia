@@ -6,8 +6,8 @@
     --fonte-texto: 'playfair Display' ;
     --cor-principal: #D9E0EE;
     --cor-segundaria:#D9E0EE;
-    --cor-destaque:#96CDFB;
-    --cor-texto:#6E738D;
+    --cor-destaque:#0783e8;
+    --cor-texto:#435acc;
 }
 body{
     background-color: var(--cor-principal);
