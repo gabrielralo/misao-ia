@@ -1,78 +1,81 @@
+import { aleatorio, nome } from './aleatorio.js';
+import { perguntas } from './perguntas.js';
+
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultados = document.querySelector(".caixa-resultados");
-const textoResultados = document.querySelector(".texto-resultados");
+const textoResultado = document.querySelector(".texto-resultado");
 const botaoJogarNovamente = document.querySelector(".novamente-botao");
 const telaInicial = document.querySelector(".tela-inicial");
 const botaoIniciar = document.querySelector(".iniciar-botao");
 
 let atual = 0;
 let perguntaAtual;
-let historialFinal = "";
+let historiaFinal = "";
 
-botaoInicial.addEventListener('click,iniciarJogo');
-function iniciarJogo(){
+botaoIniciar.addEventListener('click',iniciaJogo);
+function iniciaJogo() {
     atual = 0;
-    historialFinal = "";
+    historiaFinal = "";
     telaInicial.style.display = 'none';
     caixaPerguntas.classList.remove("mostrar");
-    caixaPerguntas.classList.remove("mostar");
+    caixaAlternativas.classList.remove("mostrar");
     caixaResultados.classList.remove("mostrar");
     mostraPergunta();
 }
 
-function mostraPergunta(){
-    if(atual >=Perguntas.length ){
+function mostraPergunta (){
+    if (atual >= perguntas.length){
         mostraResultados();
         return;
     }
-    perguntaAtual = Perguntas[atual];
+    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas;textContent = "";
+    caixaAlternativas,textContent = "";
     mostraAlternativas();
 }
 
 function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
-        const botaoAlternativa = document.createElement("button");
-        botaoAlternativa.textContent = alternativa.texto;
-        botaoAlternativa.addEventListener("click" , () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativa);
+    for (const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
-        function mostraAfirmacoes(){
-            for(const Afirmacoes of perguntaAtual.Afirmacoes){
+    function mostraAfirmacoes (){
+        for(const afirmacoes of perguntaAtual.afirmacoes){
 
-            }
         }
+    }
 }
-function respostaSelecionada(opcaoSelecionada){
-    const Afirmacoes = aleatorio(opcaoSelecionada.Afirmacao);
-    historialFinal += Afirmacao + "";
-    if (opcaoSelecionada.proxima !== undefined) {
+function respondeSelecionada(opcaoSelecionada){
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + "";
+    if (opcaoSelecionada.proxima !== undefined){
         atual = opcaoSelecionada.proxima;
     }else{
-        mostraResultados();
+        mostraResultado();
         return;
     }
     mostraPergunta();
 }
-function mostraResultado (){
+function mostraResultado(){
     caixaPerguntas.textContent = 'Em 2050, ${nome}';
-    textoResultados.textContent = historialFinal;
+    textoResultados.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
     caixaResultados.classList.add("mostrar");
-    botaoJogarNovamente.addEventListener("click" , JogaNovamente);
+    botaoJogarNovamente.addEventListener("click",jogaNovamente)
 }
-function JogaNovamente(){
+function jogaNovamente(){
     atual = 0;
-    historialFinal = "";
+    historiaFinal = "";
     caixaResultados.classList.remove("mostrar");
     mostraPergunta();
 }
 function substituiNome(){
-for ( const pergunta of pergunta){
-    pergunta.enunciado.replace(/você/ g ,nome);
+    for (const pergunta of perguntas){
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
     }
 }
 substituiNome();
