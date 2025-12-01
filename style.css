@@ -10,7 +10,7 @@
     --cor-texto:#435acc;
 }
 body{
-      background-color: var(--cor-principal);
+     background-color: var(--cor-principal);
     color: var(--cor-texto);
     font-family: var(--fonte-texto);
     display: flex;
