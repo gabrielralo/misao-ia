@@ -10,7 +10,7 @@
     --cor-texto:#435acc;
 }
 body{
-     background-color: var(--cor-principal);
+      background-color: var(--cor-principal);
     color: var(--cor-texto);
     font-family: var(--fonte-texto);
     display: flex;
@@ -37,9 +37,9 @@ button{
     border: none;
     border-radius: 15px;
     padding: 15px;
-    background-color: background-color 0.3s;
+    transition: background-color 0.3s;
 }
-button:hover{
+button :hover {
     background-color: var(--cor-destaque);
     color: var(--cor-principal);
 }
